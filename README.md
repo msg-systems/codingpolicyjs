@@ -4,10 +4,10 @@ JavaScript coding policy engine for architectonical rules.
 This module is available as node module, <a href='#command-line-interface'>command line interface</a> and <a href='#grunt-plugin'>grunt plugin</a>.
 
 <p/>
-<img src="https://nodei.co/npm/codingpolicy.png?downloads=true&stars=true" alt=""/>
+<img src="https://nodei.co/npm/codingpolicyjs.png?downloads=true&stars=true" alt=""/>
 
 <p/>
-<img src="https://david-dm.org/msg-systems/codingpolicy.png" alt=""/>
+<img src="https://david-dm.org/msg-systems/codingpolicyjs.png" alt=""/>
 
 ## Modules purpose
 
