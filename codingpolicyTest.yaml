@@ -1,0 +1,30 @@
+##
+##  JavaScript coding policy engine for architectonical rules - config file
+##  Design and Development by msg Applied Technology Research
+##  Copyright (c) 2016 msg systems ag (http://www.msg-systems.com/)
+##
+import:
+- codingpolicy.yaml
+
+rules:
+  ConsoleLogRule:
+    ruleText: "console.log usage"
+    fixText: "do not check 'console.log' in - it should not be committed into the master repo - please delete it before commit"
+    rule: RegExpRule
+    options:
+      regExp: '/^(.*console\.log.*)$/mg'
+      includeFiles: "*(bin|lib|tasks|rules)/**/*.js"
+  AppLogRule:
+    ruleText: "app.log usage"
+    fixText: "do not commit 'app.log' in - it should not be committed into the master repo unless discussed with the client architect - please delete it before commit"
+    rule: RegExpRule
+    options:
+      regExp: '/^(.*app\.log.*)$/mg'
+      includeFiles: "*(bin|lib|tasks|rules)/**/*.js"
+  NoLooseEndsRule:
+    ruleText: "unfinished business (TODO, FIXME etc.)"
+    fixText: "tie up the loose ends"
+    rule: RegExpRule
+    options:
+      regExp: '/^(.*(?:FIXME|TODO).*)$/img'
+      includeFiles: "*(bin|lib|tasks|rules)/**/*.js"
