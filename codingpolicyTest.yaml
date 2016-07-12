@@ -7,19 +7,22 @@ import:
 - codingpolicy.yaml
 
 rules:
-  ConsoleLogRule:
-    ruleText: "console.log usage"
-    fixText: "do not check 'console.log' in - it should not be committed into the master repo - please delete it before commit"
+  RegExpRule:
+    ruleText: "Single RegExp"
+    fixText: "no action - this is just a test rule"
     rule: RegExpRule
     options:
       regExp: '/^(.*console\.log.*)$/mg'
       includeFiles: "*(bin|lib|tasks|rules)/**/*.js"
-  AppLogRule:
-    ruleText: "app.log usage"
-    fixText: "do not commit 'app.log' in - it should not be committed into the master repo unless discussed with the client architect - please delete it before commit"
+  MultipleRegExpRule:
+    ruleText: "Multple RegExp"
+    fixText: "no action - this is just a test rule"
     rule: RegExpRule
+    severity: "warning"
     options:
-      regExp: '/^(.*app\.log.*)$/mg'
+      regExp:
+        - '/^(.*USAGE.*)$/mg'
+        - '/^(.*dashdash\..*)$/mg'
       includeFiles: "*(bin|lib|tasks|rules)/**/*.js"
   NoLooseEndsRule:
     ruleText: "unfinished business (TODO, FIXME etc.)"

@@ -22,21 +22,29 @@
  **  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  **  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+var _ = require("lodash")
+
 module.exports = (function () {
 
     return function (options, tools) {
-        var pattern = options.regExp;
-        var opts = "";
-        var match = /^\/(.*)\/(.*)?$/gm.exec(options.regExp);
-        if (match.length >= 2) {
-            pattern = match[1];
+        var regExps = options.regExp;
+        if (Object.prototype.toString.call(options.regExp) !== Object.prototype.toString.call([])) {
+            regExps = [options.regExp];
         }
-        if (match.length === 3) {
-            opts = match[2]
-        }
-        var regExp = new RegExp(pattern, opts);
-        // Scan for the given RegExp
-        var result = tools.regExpFileScanner.scan(options.root, options.includeFiles, options.excludedFiles, regExp);
+        var result = []
+        _.forEach(regExps, function (regExp) {
+            var opts = "";
+            var match = /^\/(.*)\/(.*)?$/gm.exec(regExp);
+            if (match.length >= 2) {
+                pattern = match[1];
+            }
+            if (match.length === 3) {
+                opts = match[2]
+            }
+            var newRegExp = new RegExp(pattern, opts);
+            // Scan for the given RegExp
+            result = result.concat(tools.regExpFileScanner.scan(options.root, options.includeFiles, options.excludedFiles, newRegExp));
+        })
         // Return the result
         return result;
     }
