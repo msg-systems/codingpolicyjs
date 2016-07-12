@@ -188,7 +188,7 @@ This tool encapsules `Esprima` and `astq`. `Esprima` is used for reading JavaScr
 | `astq` | node module | Direct access to the `astq` node module for JavaScript AST queries |
 | `astToString` | `function (ast)` | Morphs an `ast` object into the corresponding source code using `escodegen` |
 | `findViolations` | `function (ast, file, query)` | Executes the given `query` on the `ast` and reports back an  <a href='#finding-object'>`finding object`</a> pointing to the given `file` if the `query` returns results. |
-| `findAstList` | `function (root, clazzRegexp, excludedFiles)` | This function reads a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast.`. |
+| `findAstList` | `function (root, clazzRegexp, excludedFiles)` | This function reads a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast. |
 | `findAndLoopAstList` | `function (root, clazzRegexp, excludedFiles, callback)` | This function loops through a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast and will be handed back to the `callback` method. The `callback` method has the signature `function (ast, file)`. |
 
 #### astHTML5
@@ -199,6 +199,8 @@ This tool encapsules `parse5` and `astq`. `parse5` is used for reading HTML5 sou
 | --- | --- | --- |
 | `astq` | node module | Direct access to the `astq` node module for HTML5 AST queries |
 | `astToString` | `function (ast)` | Morphs an `ast` object into the corresponding source code using `parse5` |
+| `findViolations` | `function (ast, file, query)` | Executes the given `query` on the `ast` and reports back an  <a href='#finding-object'>`finding object`</a> pointing to the given `file` if the `query` returns results. |
+| `findAstList` | `function (root, clazzRegexp, excludedFiles)` | This function reads a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast. |
 
 #### regExpFileScanner
 
@@ -207,15 +209,6 @@ This tool enables you to run RegExp matches on file contents.
 | Attribute | Type | Description |
 | --- | --- | --- |
 | `scan` | `function (root, clazzRegexp, excludedFiles, searchRegexp)` | This function loops through a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. All matches for the given `searchRegexp` will be transformed into a `finding object` |
-
-#### parse5FileScanner
-
-This tool enables you to run RegExp matches on file contents.
-
-| Attribute | Type | Description |
-| --- | --- | --- |
-| `scan` | `function (root, clazzRegexp, excludedFiles)` | This function loops through a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. All matching files will be packed in a helper object with the attributes `file` and `ast`. `file` is the read file name and `ast` is the HTML5 ast object of that file. |
-| `serialize` | `function (astNode)` | This function turns an `astNode` into its proper string presentation` |
 
 ## Finding objects
 
