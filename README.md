@@ -188,7 +188,8 @@ This tool encapsules `Esprima` and `astq`. `Esprima` is used for reading JavaScr
 | `astq` | node module | Direct access to the `astq` node module for JavaScript AST queries |
 | `astToString` | `function (ast)` | Morphs an `ast` object into the corresponding source code using `escodegen` |
 | `findViolations` | `function (ast, file, query)` | Executes the given `query` on the `ast` and reports back an  <a href='#finding-object'>`finding object`</a> pointing to the given `file` if the `query` returns results. |
-| `findAndLoopAstList` | `function (root, clazzRegexp, excludedFiles, callback)` | This function loops through a list of files using the `root` value and `classRegexp` pattern. Each file will be transformed into an ast and will be handed back to the `callback` method. The `callback` method has the signature `function (ast, file)`. |
+| `findAstList` | `function (root, clazzRegexp, excludedFiles)` | This function reads a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast.`. |
+| `findAndLoopAstList` | `function (root, clazzRegexp, excludedFiles, callback)` | This function loops through a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast and will be handed back to the `callback` method. The `callback` method has the signature `function (ast, file)`. |
 
 #### astHTML5
 
