@@ -22,6 +22,7 @@
  **  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  **  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 var _ = require("lodash")
 
 module.exports = (function () {
@@ -35,10 +36,10 @@ module.exports = (function () {
         _.forEach(regExps, function (regExp) {
             var opts = "";
             var match = /^\/(.*)\/(.*)?$/gm.exec(regExp);
-            if (match.length >= 2) {
+            if (match && match.length >= 2) {
                 pattern = match[1];
             }
-            if (match.length === 3) {
+            if (match && match.length === 3) {
                 opts = match[2]
             }
             var newRegExp = new RegExp(pattern, opts);
