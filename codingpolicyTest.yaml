@@ -16,7 +16,7 @@ rules:
       regExp: '/^(.*console\.log.*)$/mg'
       includeFiles: "*(bin|lib|tasks|rules)/**/*.js"
   MultipleRegExpRule:
-    ruleText: "Multple RegExp"
+    ruleText: "Multiple RegExp"
     fixText: "no action - this is just a test rule"
     rule: RegExpRule
     severity: "warning"
