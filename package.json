@@ -44,7 +44,7 @@
         "dashdash":             "1.14.1",
         "lodash":               "4.17.5",
         "fs-extra":             "5.0.0",
-        "js-yaml":              "3.10.0",
+        "js-yaml":              "3.14.0",
         "glob":                 "7.1.2",
         "colors":               "1.1.2",
         "esprima":              "4.0.0",
