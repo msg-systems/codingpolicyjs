@@ -6,6 +6,7 @@
 
 import:
 - codingpolicy.yaml
+- test/testRules/rules.yaml
 
 rules:
   RegExpRule:
@@ -32,3 +33,28 @@ rules:
     options:
       regExp: '/^(.*(?:FIXME|TODO).*)$/img'
       includeFiles: "*(bin|lib|tasks|rules)/**/*.js"
+  JSTestRule:
+    ruleText: "Test Rule for JavaScript"
+    fixText: "nothing todo, just for testing Adapter for JavaScript"
+    rule: JSTestRule
+    options:
+      includeFiles: "test/testFiles/jsTestFile.js"
+  RegExpRuleTS:
+    ruleText: "Single RegExp for TS"
+    fixText: "no action - this is just a test rule"
+    rule: RegExpRule
+    options:
+      regExp: '/^(.*console\.log.*)$/mg'
+      includeFiles: "test/testFiles/tsTestFile.ts"
+  HTMLTestRule:
+    ruleText: "Test Rule for HTML"
+    fixText: "nothing todo, just for testing Adapter for HTML (Parse5)"
+    rule: HTMLTestRule
+    options:
+      includeFiles: "test/testFiles/htmlTestFile.html"
+  TSTestRule:
+    ruleText: "Test Rule for TypeScript"
+    fixText: "nothing todo, just for testing Adapter for TypeScript"
+    rule: TSTestRule
+    options:
+      includeFiles: "test/testFiles/tsTestFile.ts"
