@@ -157,6 +157,10 @@ rules:
       includeFiles: "*(bin|lib|tasks|rules)/**/*.js"
 ```
 
+### Example Rules 
+
+For testing the different adapter (for JS, TS, HTML) there are some test rules. You can find them under test/testRules. The tests are included in the condingpolicyTest.yaml. To execute the test rules open a Command Line Interface and enter `npm run test`.
+
 ## Rule interface
 
 The coding policy is executing concrete `rules` according to the configuration file. A concrete `rule` must therefor match the proper signature to be executed correctly:
@@ -190,6 +194,17 @@ This tool encapsules `Esprima` and `astq`. `Esprima` is used for reading JavaScr
 | `findViolations` | `function (ast, file, query)` | Executes the given `query` on the `ast` and reports back an  <a href='#finding-object'>`finding object`</a> pointing to the given `file` if the `query` returns results. |
 | `findAstList` | `function (root, clazzRegexp, excludedFiles)` | This function reads a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast. |
 | `findAndLoopAstList` | `function (root, clazzRegexp, excludedFiles, callback)` | This function loops through a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast and will be handed back to the `callback` method. The `callback` method has the signature `function (ast, file)`. |
+
+#### astTS
+
+This tool encapsules `ts-morph` and `astq`. `ts-morph` is used for reading TypeScript source code files into an AST (abstract syntax tree). `astq` is used for queries on TypeScript ast objects.
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `astq` | node module | Direct access to the `astq` node module for JavaScript AST queries |
+| `astToString` | `function (ast)` | Morphs an `ast` object into the corresponding source code using `ts-morph` |
+| `findViolations` | `function (ast, file, query)` | Executes the given `query` on the `ast` and reports back an  <a href='#finding-object'>`finding object`</a> pointing to the given `file` if the `query` returns results. |
+| `findAstList` | `function (root, clazzRegexp, excludedFiles)` | This function reads a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast. |
 
 #### astHTML5
 
