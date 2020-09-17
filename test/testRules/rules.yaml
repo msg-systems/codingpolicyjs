@@ -8,3 +8,4 @@ register:
   JSTestRule: ./JSTestRule.js
   HTMLTestRule: ./HTMLTestRule.js
   TSTestRule: ./TSTestRule.js
+  StylesheetTestRule: ./StylesheetTestRule.js

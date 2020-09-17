@@ -58,3 +58,31 @@ rules:
     rule: TSTestRule
     options:
       includeFiles: "test/testFiles/tsTestFile.ts"
+  LESSTestRule:
+    ruleText: "Test Rule for LESS"
+    fixText: "nothing todo, just for testing Adapter for Stylesheet (LESS)"
+    rule: StylesheetTestRule
+    options:
+      includeFiles: "test/testFiles/lessTestFile.less"
+      syntax: "less"
+  SCSSTestRule:
+    ruleText: "Test Rule for SCSS"
+    fixText: "nothing todo, just for testing Adapter for Stylesheet (SCSS)"
+    rule: StylesheetTestRule
+    options:
+      includeFiles: "test/testFiles/scssTestFile.scss"
+      syntax: "scss"
+  SASSTestRule:
+    ruleText: "Test Rule for SASS"
+    fixText: "nothing todo, just for testing Adapter for Stylesheet (SASS)"
+    rule: StylesheetTestRule
+    options:
+      includeFiles: "test/testFiles/sassTestFile.sass"
+      syntax: "sass"
+  CSSTestRule:
+    ruleText: "Test Rule for CSS"
+    fixText: "nothing todo, just for testing Adapter for Stylesheet (CSS)"
+    rule: StylesheetTestRule
+    options:
+      includeFiles: "test/testFiles/cssTestFile.css"
+      syntax: "css"
