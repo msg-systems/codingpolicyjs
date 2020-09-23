@@ -201,7 +201,7 @@ This tool encapsules `ts-morph` and `astq`. `ts-morph` is used for reading TypeS
 
 | Attribute | Type | Description |
 | --- | --- | --- |
-| `astq` | node module | Direct access to the `astq` node module for JavaScript AST queries |
+| `astq` | node module | Direct access to the `astq` node module for TypeScript AST queries |
 | `astToString` | `function (ast)` | Morphs an `ast` object into the corresponding source code using `ts-morph` |
 | `findViolations` | `function (ast, file, query)` | Executes the given `query` on the `ast` and reports back an  <a href='#finding-object'>`finding object`</a> pointing to the given `file` if the `query` returns results. |
 | `findAstList` | `function (root, clazzRegexp, excludedFiles)` | This function reads a list of files using the `root` value, `classRegexp` pattern and `excludedFiles` list. Each file will be transformed into an ast. |
@@ -223,10 +223,10 @@ This tool encapsules `gonzales-pe` and `astq`. `gonzales-pe` is used for reading
 
 | Attribute | Type | Description |
 | --- | --- | --- |
-| `astq` | node module | Direct access to the `astq` node module for HTML5 AST queries |
+| `astq` | node module | Direct access to the `astq` node module for Stylesheet AST queries |
 | `astToString` | `function (ast)` | Morphs an `ast` object into the corresponding source code using `gonzales-pe` |
 | `findViolations` | `function (ast, file, query)` | Executes the given `query` on the `ast` and reports back an  <a href='#finding-object'>`finding object`</a> pointing to the given `file` if the `query` returns results. |
-| `findAstList` | `function (options)` | This function reads a list of files with the given `synta`x (options.syntax, which can be CSS, LESS, SASS or SCSS) using the `root` (options.root) value, `classRegexp` (options.classRegexp) pattern and `excludedFiles` (options.excludedFiles) list. Each file will be transformed into an ast. |
+| `findAstList` | `function (options)` | This function reads a list of files with the given `syntax` (options.syntax, which can be CSS, LESS, SASS or SCSS) using the `root` (options.root) value, `classRegexp` (options.classRegexp) pattern and `excludedFiles` (options.excludedFiles) list. Each file will be transformed into an ast. |
 
 #### regExpFileScanner
 
