@@ -42,7 +42,7 @@
     "dependencies": {
         "package": "1.0.1",
         "dashdash": "1.14.1",
-        "lodash": "4.17.5",
+        "lodash": "4.17.21",
         "fs-extra": "5.0.0",
         "js-yaml": "3.10.0",
         "glob": "7.1.2",
